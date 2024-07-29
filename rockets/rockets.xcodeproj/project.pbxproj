@@ -19,6 +19,7 @@
 		0CA373902C57DCEE001D5CD2 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3738D2C57DCEE001D5CD2 /* LabGrotesque-Bold.ttf */; };
 		0CA373912C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3738E2C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf */; };
 		0CA373922C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3738F2C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf */; };
+		0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373972C57DFF9001D5CD2 /* AppTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0CA3738D2C57DCEE001D5CD2 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		0CA3738E2C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		0CA3738F2C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
+		0CA373972C57DFF9001D5CD2 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		0CA373562C57CD1A001D5CD2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373972C57DFF9001D5CD2 /* AppTheme.swift */,
 				0CA3736D2C57D890001D5CD2 /* Fonts */,
 				0CA3734B2C57CC5A001D5CD2 /* Assets.xcassets */,
 				0CA3734D2C57CC5A001D5CD2 /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA373472C57CC59001D5CD2 /* ViewController.swift in Sources */,
+				0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */,
 				0CA373432C57CC59001D5CD2 /* AppDelegate.swift in Sources */,
 				0CA373452C57CC59001D5CD2 /* SceneDelegate.swift in Sources */,
 			);
