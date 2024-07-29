@@ -13,6 +13,7 @@
 		0CA3734A2C57CC59001D5CD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0CA373492C57CC59001D5CD2 /* Base */; };
 		0CA3734C2C57CC5A001D5CD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3734B2C57CC5A001D5CD2 /* Assets.xcassets */; };
 		0CA3734F2C57CC5A001D5CD2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3734E2C57CC5A001D5CD2 /* Base */; };
+		0CA373612C57D56C001D5CD2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CA373602C57D56C001D5CD2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0CA3734B2C57CC5A001D5CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CA3734E2C57CC5A001D5CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CA373502C57CC5A001D5CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA373602C57D56C001D5CD2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		0CA373412C57CC59001D5CD2 /* rockets */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373602C57D56C001D5CD2 /* .swiftlint.yml */,
+				0CA373562C57CD1A001D5CD2 /* Resources */,
 				0CA373422C57CC59001D5CD2 /* AppDelegate.swift */,
 				0CA373442C57CC59001D5CD2 /* SceneDelegate.swift */,
 				0CA373462C57CC59001D5CD2 /* ViewController.swift */,
 				0CA373482C57CC59001D5CD2 /* Main.storyboard */,
+			);
+			path = rockets;
+			sourceTree = "<group>";
+		};
+		0CA373562C57CD1A001D5CD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0CA3734B2C57CC5A001D5CD2 /* Assets.xcassets */,
 				0CA3734D2C57CC5A001D5CD2 /* LaunchScreen.storyboard */,
 				0CA373502C57CC5A001D5CD2 /* Info.plist */,
 			);
-			path = rockets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +88,15 @@
 				0CA3733B2C57CC59001D5CD2 /* Sources */,
 				0CA3733C2C57CC59001D5CD2 /* Frameworks */,
 				0CA3733D2C57CC59001D5CD2 /* Resources */,
+				0CA3735E2C57CF99001D5CD2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = rockets;
+			packageProductDependencies = (
+			);
 			productName = rockets;
 			productReference = 0CA3733F2C57CC59001D5CD2 /* rockets.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 0CA373362C57CC59001D5CD2;
+			packageReferences = (
+				0CA3735F2C57D0D9001D5CD2 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 0CA373402C57CC59001D5CD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA373612C57D56C001D5CD2 /* .swiftlint.yml in Resources */,
 				0CA3734C2C57CC5A001D5CD2 /* Assets.xcassets in Resources */,
 				0CA3734F2C57CC5A001D5CD2 /* Base in Resources */,
 				0CA3734A2C57CC59001D5CD2 /* Base in Resources */,
@@ -132,6 +150,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CA3735E2C57CF99001D5CD2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SWIFT_PACKAGE_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\nSWIFTLINT_CMD=$(ls \"$SWIFT_PACKAGE_DIR\"/swiftlintplugins/SwiftLintBinary/SwiftLintBinary.artifactbundle/swiftlint-*/bin/swiftlint | head -n 1)\n\nif test -f \"$SWIFTLINT_CMD\" 2>&1\nthen\n    \"$SWIFTLINT_CMD\"\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0CA3733B2C57CC59001D5CD2 /* Sources */ = {
@@ -203,7 +243,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +306,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -294,7 +334,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4YYVSHC6RN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = rockets/Info.plist;
+				INFOPLIST_FILE = rockets/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,7 +366,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4YYVSHC6RN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = rockets/Info.plist;
+				INFOPLIST_FILE = rockets/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -371,6 +411,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0CA3735F2C57D0D9001D5CD2 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 0CA373372C57CC59001D5CD2 /* Project object */;
 }
