@@ -10,8 +10,8 @@ import UIKit
 enum AppTheme {
     enum Color {
         static let accent = R.color.accentColor()
-        static let secondary = R.color.secondaryColor()
-        static let tertiary = R.color.tertiaryColor()
+        static let secondary = R.color.appSecondaryColor()
+        static let tertiary = R.color.appTertiaryColor()
     }
 
     enum Font {
