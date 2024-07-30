@@ -18,6 +18,15 @@
 		0CA373912C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3738E2C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf */; };
 		0CA373922C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3738F2C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf */; };
 		0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373972C57DFF9001D5CD2 /* AppTheme.swift */; };
+		0CA373B82C591173001D5CD2 /* RocketsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373B72C591173001D5CD2 /* RocketsViewProtocol.swift */; };
+		0CA373BB2C591180001D5CD2 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373BA2C591180001D5CD2 /* RocketsViewController.swift */; };
+		0CA373BD2C591189001D5CD2 /* RocketsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373BC2C591189001D5CD2 /* RocketsPresenter.swift */; };
+		0CA373BF2C591194001D5CD2 /* RocketsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373BE2C591194001D5CD2 /* RocketsInteractor.swift */; };
+		0CA373C22C5911AC001D5CD2 /* RocketsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C12C5911AC001D5CD2 /* RocketsRouter.swift */; };
+		0CA373C42C5911BB001D5CD2 /* RocketsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C32C5911BB001D5CD2 /* RocketsRouterProtocol.swift */; };
+		0CA373C62C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C52C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift */; };
+		0CA373C82C591338001D5CD2 /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C72C591338001D5CD2 /* TransitionHandler.swift */; };
+		0CA373CB2C5916BA001D5CD2 /* RocketsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,15 @@
 		0CA3738E2C57DCEE001D5CD2 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		0CA3738F2C57DCEE001D5CD2 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		0CA373972C57DFF9001D5CD2 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		0CA373B72C591173001D5CD2 /* RocketsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewProtocol.swift; sourceTree = "<group>"; };
+		0CA373BA2C591180001D5CD2 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
+		0CA373BC2C591189001D5CD2 /* RocketsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsPresenter.swift; sourceTree = "<group>"; };
+		0CA373BE2C591194001D5CD2 /* RocketsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsInteractor.swift; sourceTree = "<group>"; };
+		0CA373C12C5911AC001D5CD2 /* RocketsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsRouter.swift; sourceTree = "<group>"; };
+		0CA373C32C5911BB001D5CD2 /* RocketsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsRouterProtocol.swift; sourceTree = "<group>"; };
+		0CA373C52C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsIntercatorProtocol.swift; sourceTree = "<group>"; };
+		0CA373C72C591338001D5CD2 /* TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
+		0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsModuleAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				0CA373B62C591134001D5CD2 /* Models */,
+				0CA373C02C591199001D5CD2 /* Assembly */,
 				0CA373B52C59112B001D5CD2 /* Router */,
 				0CA373B42C591124001D5CD2 /* Interactor */,
 				0CA373B32C59111F001D5CD2 /* Presenter */,
@@ -144,6 +163,8 @@
 		0CA373B22C59111A001D5CD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373B72C591173001D5CD2 /* RocketsViewProtocol.swift */,
+				0CA373BA2C591180001D5CD2 /* RocketsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +172,7 @@
 		0CA373B32C59111F001D5CD2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373BC2C591189001D5CD2 /* RocketsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -158,6 +180,8 @@
 		0CA373B42C591124001D5CD2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373BE2C591194001D5CD2 /* RocketsInteractor.swift */,
+				0CA373C52C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -165,6 +189,9 @@
 		0CA373B52C59112B001D5CD2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373C12C5911AC001D5CD2 /* RocketsRouter.swift */,
+				0CA373C32C5911BB001D5CD2 /* RocketsRouterProtocol.swift */,
+				0CA373C72C591338001D5CD2 /* TransitionHandler.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -174,6 +201,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0CA373C02C591199001D5CD2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +318,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA373BF2C591194001D5CD2 /* RocketsInteractor.swift in Sources */,
+				0CA373BD2C591189001D5CD2 /* RocketsPresenter.swift in Sources */,
+				0CA373C22C5911AC001D5CD2 /* RocketsRouter.swift in Sources */,
+				0CA373CB2C5916BA001D5CD2 /* RocketsModuleAssembly.swift in Sources */,
+				0CA373B82C591173001D5CD2 /* RocketsViewProtocol.swift in Sources */,
+				0CA373C82C591338001D5CD2 /* TransitionHandler.swift in Sources */,
+				0CA373C62C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift in Sources */,
+				0CA373BB2C591180001D5CD2 /* RocketsViewController.swift in Sources */,
+				0CA373C42C5911BB001D5CD2 /* RocketsRouterProtocol.swift in Sources */,
 				0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */,
 				0CA373432C57CC59001D5CD2 /* AppDelegate.swift in Sources */,
 				0CA373452C57CC59001D5CD2 /* SceneDelegate.swift in Sources */,
