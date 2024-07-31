@@ -17,7 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-//        window?.rootViewController = _DesingSystemViewController()
+        window?.rootViewController = createEntryPoint()
         window?.makeKeyAndVisible()
+    }
+
+    private func createEntryPoint() -> UINavigationController {
+        let viewController = RocketsViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        RocketsModuleAssembly.build(with: viewController)
+        return navigationController
     }
 }
