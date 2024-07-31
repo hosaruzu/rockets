@@ -27,6 +27,12 @@
 		0CA373C62C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C52C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift */; };
 		0CA373C82C591338001D5CD2 /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373C72C591338001D5CD2 /* TransitionHandler.swift */; };
 		0CA373CB2C5916BA001D5CD2 /* RocketsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */; };
+		0CA373CE2C5919A2001D5CD2 /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373CD2C5919A2001D5CD2 /* RocketView.swift */; };
+		0CA373D22C591A0E001D5CD2 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373D12C591A0E001D5CD2 /* UIView+Ext.swift */; };
+		0CA373D52C591B8A001D5CD2 /* SliderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373D42C591B8A001D5CD2 /* SliderCollectionView.swift */; };
+		0CA373D72C592FA8001D5CD2 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373D62C592FA8001D5CD2 /* PagingView.swift */; };
+		0CA373DA2C593606001D5CD2 /* RocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373D92C593606001D5CD2 /* RocketCell.swift */; };
+		0CA373DD2C594D87001D5CD2 /* RocketContentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373DC2C594D87001D5CD2 /* RocketContentWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		0CA373C52C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsIntercatorProtocol.swift; sourceTree = "<group>"; };
 		0CA373C72C591338001D5CD2 /* TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionHandler.swift; sourceTree = "<group>"; };
 		0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsModuleAssembly.swift; sourceTree = "<group>"; };
+		0CA373CD2C5919A2001D5CD2 /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
+		0CA373D12C591A0E001D5CD2 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		0CA373D42C591B8A001D5CD2 /* SliderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionView.swift; sourceTree = "<group>"; };
+		0CA373D62C592FA8001D5CD2 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		0CA373D92C593606001D5CD2 /* RocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCell.swift; sourceTree = "<group>"; };
+		0CA373DC2C594D87001D5CD2 /* RocketContentWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketContentWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 		0CA373412C57CC59001D5CD2 /* rockets */ = {
 			isa = PBXGroup;
 			children = (
+				0CA373D02C5919FB001D5CD2 /* Helpers */,
 				0CA373602C57D56C001D5CD2 /* .swiftlint.yml */,
 				0CA3739D2C57E2E0001D5CD2 /* App */,
 				0CA373AE2C5910DF001D5CD2 /* Modules */,
@@ -141,7 +154,7 @@
 				0CA373B52C59112B001D5CD2 /* Router */,
 				0CA373B42C591124001D5CD2 /* Interactor */,
 				0CA373B32C59111F001D5CD2 /* Presenter */,
-				0CA373B22C59111A001D5CD2 /* Views */,
+				0CA373B22C59111A001D5CD2 /* View */,
 			);
 			path = Rockets;
 			sourceTree = "<group>";
@@ -160,13 +173,18 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
-		0CA373B22C59111A001D5CD2 /* Views */ = {
+		0CA373B22C59111A001D5CD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0CA373B72C591173001D5CD2 /* RocketsViewProtocol.swift */,
 				0CA373BA2C591180001D5CD2 /* RocketsViewController.swift */,
+				0CA373CD2C5919A2001D5CD2 /* RocketView.swift */,
+				0CA373D42C591B8A001D5CD2 /* SliderCollectionView.swift */,
+				0CA373D62C592FA8001D5CD2 /* PagingView.swift */,
+				0CA373D92C593606001D5CD2 /* RocketCell.swift */,
+				0CA373DC2C594D87001D5CD2 /* RocketContentWrapper.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0CA373B32C59111F001D5CD2 /* Presenter */ = {
@@ -209,6 +227,14 @@
 				0CA373CA2C5916BA001D5CD2 /* RocketsModuleAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0CA373D02C5919FB001D5CD2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0CA373D12C591A0E001D5CD2 /* UIView+Ext.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,14 +345,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA373BF2C591194001D5CD2 /* RocketsInteractor.swift in Sources */,
+				0CA373DA2C593606001D5CD2 /* RocketCell.swift in Sources */,
 				0CA373BD2C591189001D5CD2 /* RocketsPresenter.swift in Sources */,
 				0CA373C22C5911AC001D5CD2 /* RocketsRouter.swift in Sources */,
 				0CA373CB2C5916BA001D5CD2 /* RocketsModuleAssembly.swift in Sources */,
+				0CA373D22C591A0E001D5CD2 /* UIView+Ext.swift in Sources */,
+				0CA373CE2C5919A2001D5CD2 /* RocketView.swift in Sources */,
+				0CA373DD2C594D87001D5CD2 /* RocketContentWrapper.swift in Sources */,
 				0CA373B82C591173001D5CD2 /* RocketsViewProtocol.swift in Sources */,
 				0CA373C82C591338001D5CD2 /* TransitionHandler.swift in Sources */,
 				0CA373C62C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift in Sources */,
+				0CA373D52C591B8A001D5CD2 /* SliderCollectionView.swift in Sources */,
 				0CA373BB2C591180001D5CD2 /* RocketsViewController.swift in Sources */,
 				0CA373C42C5911BB001D5CD2 /* RocketsRouterProtocol.swift in Sources */,
+				0CA373D72C592FA8001D5CD2 /* PagingView.swift in Sources */,
 				0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */,
 				0CA373432C57CC59001D5CD2 /* AppDelegate.swift in Sources */,
 				0CA373452C57CC59001D5CD2 /* SceneDelegate.swift in Sources */,
