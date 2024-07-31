@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 final class RocketCell: UICollectionViewCell {
-    private let scrollView = RocketContentWrapper()
+    private let scrollView = RocketScrollView()
 
     let screenHeight = UIScreen.main.bounds.height
 
@@ -22,8 +22,8 @@ final class RocketCell: UICollectionViewCell {
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
         }
 
-        scrollView.bounces = false
-        scrollView.contentSize = .init(width: bounds.width, height: bounds.height * 1.33)
+//        scrollView.bounces = false
+//        scrollView.contentSize = .init(width: bounds.width, height: bounds.height * 1.33)
     }
 
     required init?(coder: NSCoder) {

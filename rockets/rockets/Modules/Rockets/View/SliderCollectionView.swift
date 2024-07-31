@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 final class SliderCollectionView: UICollectionView {
-
     // MARK: - Flow layout
 
     private let flowLayout: UICollectionViewFlowLayout = {
