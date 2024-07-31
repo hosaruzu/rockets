@@ -1,5 +1,5 @@
 //
-//  RocketContentWrapper.swift
+//  RocketScrollView.swift
 //  rockets
 //
 //  Created by Artem Tebenkov on 30.07.2024.
@@ -29,17 +29,7 @@ final class RocketScrollView: UIScrollView {
         return title
     }()
 
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.bounces = false
-        tableView.isScrollEnabled = false
-        tableView.showsVerticalScrollIndicator = false
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
+    private let tableView = TableView()
 
     // MARK: - Init
 
@@ -102,34 +92,16 @@ private extension RocketScrollView {
     }
 }
 
-// MARK: - UITableViewDataSource
-
-extension RocketScrollView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        30
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "row \(indexPath)"
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension RocketScrollView: UITableViewDelegate { }
-
 // MARK: - UIScrollViewDelegate
 
 extension RocketScrollView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == self {
-            tableView.isScrollEnabled = (self.contentOffset.y >= UIConstants.ScrollView.contentOffsetTrigger)
+            tableView.rocketTableView.isScrollEnabled = (self.contentOffset.y >= UIConstants.ScrollView.contentOffsetTrigger)
         }
 
-        if scrollView == self.tableView {
-            self.tableView.isScrollEnabled = (tableView.contentOffset.y > 0)
+        if scrollView == self.tableView.rocketTableView {
+            self.tableView.rocketTableView.isScrollEnabled = (tableView.rocketTableView.contentOffset.y >= 0)
         }
     }
 }
@@ -138,13 +110,13 @@ extension RocketScrollView: UIScrollViewDelegate {
 
 private enum UIConstants {
     enum ScrollView {
-        static let contentSizeHeightMultiplier: CGFloat = 1.49
-        static let contentOffsetTrigger: CGFloat = 200
+        static let contentSizeHeightMultiplier: CGFloat = 1.66
+        static let contentOffsetTrigger: CGFloat = UIScreen.main.bounds.height * 0.56
     }
 
     enum ContentView {
         static let cornerRadius: CGFloat = 32
-        static let topOffset: CGFloat = UIScreen.main.bounds.height * 0.45
+        static let topOffset: CGFloat = UIScreen.main.bounds.height * 0.6
         static let height: CGFloat = UIScreen.main.bounds.height
     }
 

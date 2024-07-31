@@ -1,5 +1,5 @@
 //
-//  PagingView.swift
+//  PageControl.swift
 //  rockets
 //
 //  Created by Artem Tebenkov on 30.07.2024.
@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-final class PagingView: UIView {
+final class PageControl: UIView {
     // MARK: - Subviews
 
     private let pageControl: UIPageControl = {
@@ -31,7 +31,7 @@ final class PagingView: UIView {
 
 // MARK: - Setup appearance
 
-private extension PagingView {
+private extension PageControl {
     func setupAppearance() {
         backgroundColor = .appTertiaryBackground
         pageControl.currentPageIndicatorTintColor = .white
@@ -44,7 +44,7 @@ private extension PagingView {
 
 // MARK: - Setup layout
 
-private extension PagingView {
+private extension PageControl {
     func addSubviews() {
         addSubviews(views: pageControl)
     }
@@ -52,7 +52,13 @@ private extension PagingView {
     func setupConstraints() {
         pageControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-4)
+            make.centerY.equalToSuperview().offset(UIConstants.centerOffset)
         }
     }
+}
+
+// MARK: - UI constants
+
+private enum UIConstants {
+    static let centerOffset: CGFloat = -4
 }

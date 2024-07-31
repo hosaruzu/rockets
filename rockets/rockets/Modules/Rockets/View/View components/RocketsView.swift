@@ -8,11 +8,11 @@
 import SnapKit
 import UIKit
 
-final class RocketView: UIView {
+final class RocketsView: UIView {
     // MARK: - Subviews
 
     private let collectionView = SliderCollectionView()
-    private let pagingView = PagingView()
+    private let pagingView = PageControl()
 
     // MARK: - Init
 
@@ -31,7 +31,7 @@ final class RocketView: UIView {
 
 // MARK: - Setup layout
 
-private extension RocketView {
+private extension RocketsView {
     func addSubviews() {
         backgroundColor = .white
         addSubviews(views: pagingView, collectionView)
@@ -52,36 +52,38 @@ private extension RocketView {
 
 // MARK: - Setup collection view
 
-private extension RocketView {
+private extension RocketsView {
     func setupCollectionViewDataSourceAndRegistration() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .gray
-        collectionView.register(RocketCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(RocketCell.self)
     }
 }
 
-extension RocketView: UICollectionViewDataSource {
+extension RocketsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "cell",
-            for: indexPath) as? RocketCell
-        else {
-            return UICollectionViewCell()
-        }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeue(RocketCell.self, for: indexPath)
         cell.set(item: indexPath.item)
         return cell
     }
 }
 
-extension RocketView: UICollectionViewDelegate { }
+extension RocketsView: UICollectionViewDelegate { }
 
-extension RocketView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+extension RocketsView: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         return CGSize(width: bounds.width, height: bounds.height)
     }
 }
