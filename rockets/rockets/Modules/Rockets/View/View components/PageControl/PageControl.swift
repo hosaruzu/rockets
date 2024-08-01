@@ -34,7 +34,7 @@ final class PageControl: UIView {
 private extension PageControl {
     func setupAppearance() {
         backgroundColor = .appTertiaryBackground
-        pageControl.currentPageIndicatorTintColor = .white
+        pageControl.currentPageIndicatorTintColor = AppTheme.Color.accent
         pageControl.tintColor = AppTheme.Color.secondary
 
         pageControl.numberOfPages = 4

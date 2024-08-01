@@ -12,7 +12,7 @@ final class RocketsView: UIView {
     // MARK: - Subviews
 
     private let collectionView = SliderCollectionView()
-    private let pagingView = PageControl()
+    private let pageControl = PageControl()
 
     // MARK: - Init
 
@@ -34,18 +34,18 @@ final class RocketsView: UIView {
 private extension RocketsView {
     func addSubviews() {
         backgroundColor = .white
-        addSubviews(views: pagingView, collectionView)
+        addSubviews(views: pageControl, collectionView)
     }
 
     func setupLayout() {
-        pagingView.snp.makeConstraints { make in
+        pageControl.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalToSuperview()
-            make.height.equalTo(72)
+            make.height.equalTo(UIConstants.PageControl.height)
         }
 
         collectionView.snp.makeConstraints { make in
             make.horizontalEdges.top.equalToSuperview()
-            make.bottom.equalTo(pagingView.snp.top)
+            make.bottom.equalTo(pageControl.snp.top)
         }
     }
 }
@@ -56,10 +56,11 @@ private extension RocketsView {
     func setupCollectionViewDataSourceAndRegistration() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .gray
         collectionView.register(RocketCell.self)
     }
 }
+
+// MARK: - UICollectionViewDataSource
 
 extension RocketsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,7 +77,11 @@ extension RocketsView: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension RocketsView: UICollectionViewDelegate { }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension RocketsView: UICollectionViewDelegateFlowLayout {
     func collectionView(
@@ -85,5 +90,13 @@ extension RocketsView: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         return CGSize(width: bounds.width, height: bounds.height)
+    }
+}
+
+// MARK: - UI constansts
+
+private enum  UIConstants {
+    enum PageControl {
+        static let height: CGFloat = 72
     }
 }

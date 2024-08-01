@@ -40,6 +40,9 @@
 		0CA373F32C5A9B47001D5CD2 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373F22C5A9B47001D5CD2 /* TableView.swift */; };
 		0CA373F62C5AAB28001D5CD2 /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373F52C5AAB28001D5CD2 /* TableFooterView.swift */; };
 		0CA373FC2C5AC32D001D5CD2 /* RocketStatsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA373FB2C5AC32D001D5CD2 /* RocketStatsCollectionView.swift */; };
+		0CA374112C5BC3BA001D5CD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA374102C5BC3BA001D5CD2 /* ContentView.swift */; };
+		0CA374152C5BC7D4001D5CD2 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA374142C5BC7D4001D5CD2 /* TitleLabel.swift */; };
+		0CA3741C2C5BC8A8001D5CD2 /* RTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3741B2C5BC8A8001D5CD2 /* RTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		0CA373F22C5A9B47001D5CD2 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		0CA373F52C5AAB28001D5CD2 /* TableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
 		0CA373FB2C5AC32D001D5CD2 /* RocketStatsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketStatsCollectionView.swift; sourceTree = "<group>"; };
+		0CA374102C5BC3BA001D5CD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0CA374142C5BC7D4001D5CD2 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		0CA3741B2C5BC8A8001D5CD2 /* RTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +285,8 @@
 		0CA373FF2C5AC5DB001D5CD2 /* UI components */ = {
 			isa = PBXGroup;
 			children = (
+				0CA374182C5BC887001D5CD2 /* Title */,
+				0CA374172C5BC87C001D5CD2 /* TableView */,
 			);
 			path = "UI components";
 			sourceTree = "<group>";
@@ -329,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				0CA373DC2C594D87001D5CD2 /* RocketScrollView.swift */,
+				0CA374132C5BC7C9001D5CD2 /* Title */,
+				0CA3740F2C5BC3AF001D5CD2 /* ContentView */,
 				0CA374082C5AC7B5001D5CD2 /* TableView */,
 			);
 			path = ScrollView;
@@ -368,6 +378,37 @@
 				0CA373F52C5AAB28001D5CD2 /* TableFooterView.swift */,
 			);
 			path = Footer;
+			sourceTree = "<group>";
+		};
+		0CA3740F2C5BC3AF001D5CD2 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				0CA374102C5BC3BA001D5CD2 /* ContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		0CA374132C5BC7C9001D5CD2 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		0CA374172C5BC87C001D5CD2 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0CA3741B2C5BC8A8001D5CD2 /* RTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		0CA374182C5BC887001D5CD2 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				0CA374142C5BC7D4001D5CD2 /* TitleLabel.swift */,
+			);
+			path = Title;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,12 +522,14 @@
 				0CA373DA2C593606001D5CD2 /* RocketCell.swift in Sources */,
 				0CA373BD2C591189001D5CD2 /* RocketsPresenter.swift in Sources */,
 				0CA373E82C5A73D9001D5CD2 /* ReuseIdentifiable.swift in Sources */,
+				0CA3741C2C5BC8A8001D5CD2 /* RTableView.swift in Sources */,
 				0CA373C22C5911AC001D5CD2 /* RocketsRouter.swift in Sources */,
 				0CA373CB2C5916BA001D5CD2 /* RocketsModuleAssembly.swift in Sources */,
 				0CA373D22C591A0E001D5CD2 /* UIView+Ext.swift in Sources */,
 				0CA373CE2C5919A2001D5CD2 /* RocketsView.swift in Sources */,
 				0CA373DD2C594D87001D5CD2 /* RocketScrollView.swift in Sources */,
 				0CA373B82C591173001D5CD2 /* RocketsViewProtocol.swift in Sources */,
+				0CA374112C5BC3BA001D5CD2 /* ContentView.swift in Sources */,
 				0CA373C82C591338001D5CD2 /* TransitionHandler.swift in Sources */,
 				0CA373C62C5911D2001D5CD2 /* RocketsIntercatorProtocol.swift in Sources */,
 				0CA373F32C5A9B47001D5CD2 /* TableView.swift in Sources */,
@@ -500,6 +543,7 @@
 				0CA373E62C5A736E001D5CD2 /* RocketStatsTableViewCell.swift in Sources */,
 				0CA373D72C592FA8001D5CD2 /* PageControl.swift in Sources */,
 				0CA373982C57DFF9001D5CD2 /* AppTheme.swift in Sources */,
+				0CA374152C5BC7D4001D5CD2 /* TitleLabel.swift in Sources */,
 				0CA373432C57CC59001D5CD2 /* AppDelegate.swift in Sources */,
 				0CA373452C57CC59001D5CD2 /* SceneDelegate.swift in Sources */,
 			);
