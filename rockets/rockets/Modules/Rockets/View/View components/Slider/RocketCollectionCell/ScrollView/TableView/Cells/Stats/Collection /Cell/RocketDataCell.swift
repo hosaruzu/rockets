@@ -12,11 +12,25 @@ final class RocketDataCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.cornerRadius = 32
-        backgroundColor = AppTheme.Color.secondary
+        setupAppearance()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+// MARK: - Setup appearance
+
+private extension RocketDataCell {
+    func setupAppearance() {
+        layer.cornerRadius = UIConstants.cornerRadius
+        backgroundColor = AppTheme.Color.secondary
+    }
+}
+
+// MARK: - UI constants
+
+private enum UIConstants {
+    static let cornerRadius: CGFloat = 32
 }

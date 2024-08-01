@@ -12,7 +12,7 @@ final class RocketStatsCollectionView: UIView {
 
     private let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 12
+        layout.minimumLineSpacing = UIConstants.Layout.minimumLineSpacing
         layout.scrollDirection = .horizontal
         return layout
     }()
@@ -44,7 +44,7 @@ final class RocketStatsCollectionView: UIView {
 
 private extension RocketStatsCollectionView {
     func setupCollectionViewAppearance() {
-        collectionView.contentInset = .init(top: 0, left: 32, bottom: 32, right: 32)
+        collectionView.contentInset = UIConstants.CollectionView.contentInset
         collectionView.showsHorizontalScrollIndicator = false
     }
 
@@ -99,6 +99,22 @@ extension RocketStatsCollectionView: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return .init(width: 96, height: 96)
+        return UIConstants.Cell.size
+    }
+}
+
+// MARK: - UI constants
+
+private enum UIConstants {
+    enum Layout {
+        static let minimumLineSpacing: CGFloat = 12
+    }
+
+    enum CollectionView {
+        static let contentInset: UIEdgeInsets = .init(top: 0, left: 32, bottom: 32, right: 32)
+    }
+
+    enum Cell {
+        static let size: CGSize = .init(width: 96, height: 96)
     }
 }
