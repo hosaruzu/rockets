@@ -11,7 +11,7 @@ import UIKit
 final class RocketsViewController: UIViewController {
     // MARK: - Subviews
 
-    private let rocketView = RocketView()
+    private let rocketView = RocketsView()
 
     // MARK: - View output
 

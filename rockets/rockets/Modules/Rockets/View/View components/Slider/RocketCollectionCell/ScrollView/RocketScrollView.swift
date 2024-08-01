@@ -1,5 +1,5 @@
 //
-//  RocketContentWrapper.swift
+//  RocketScrollView.swift
 //  rockets
 //
 //  Created by Artem Tebenkov on 30.07.2024.
@@ -11,35 +11,9 @@ import UIKit
 final class RocketScrollView: UIScrollView {
     // MARK: - Subviews
 
-    private let contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.clipsToBounds = true
-        view.layer.cornerRadius = UIConstants.ContentView.cornerRadius
-        view.layer.cornerCurve = .continuous
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        return view
-    }()
-
-    private let titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = AppTheme.Font.largeTitle
-        title.textColor = AppTheme.Color.accent
-        title.text = "Aboba"
-        return title
-    }()
-
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.bounces = false
-        tableView.isScrollEnabled = false
-        tableView.showsVerticalScrollIndicator = false
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
+    private let contentView = ContentView()
+    private let tableView = TableView()
+    private let titleLabel = TitleLabel()
 
     // MARK: - Init
 
@@ -48,6 +22,8 @@ final class RocketScrollView: UIScrollView {
         setupScrollView()
         addSubviews()
         setupConstraints()
+
+        titleLabel.text = "Rocket name"
     }
 
     required init?(coder: NSCoder) {
@@ -88,12 +64,10 @@ private extension RocketScrollView {
             make.height.equalTo(UIConstants.ContentView.height)
             make.width.equalToSuperview()
         }
-
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(UIConstants.Title.topOffset)
             make.leading.equalToSuperview().offset(UIConstants.Title.leadingOffset)
         }
-
         tableView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(UIConstants.TableView.topOffset)
             make.width.equalToSuperview()
@@ -102,34 +76,16 @@ private extension RocketScrollView {
     }
 }
 
-// MARK: - UITableViewDataSource
-
-extension RocketScrollView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        30
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "row \(indexPath)"
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension RocketScrollView: UITableViewDelegate { }
-
 // MARK: - UIScrollViewDelegate
 
 extension RocketScrollView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self {
-            tableView.isScrollEnabled = (self.contentOffset.y >= UIConstants.ScrollView.contentOffsetTrigger)
-        }
+        handleCurrentScroll(scrollView)
+    }
 
-        if scrollView == self.tableView {
-            self.tableView.isScrollEnabled = (tableView.contentOffset.y > 0)
+    func handleCurrentScroll(_ scrollView: UIScrollView) {
+        if scrollView == self {
+            tableView.isScrollEnabled(self.contentOffset.y >= UIConstants.ScrollView.contentOffsetTrigger)
         }
     }
 }
@@ -138,13 +94,12 @@ extension RocketScrollView: UIScrollViewDelegate {
 
 private enum UIConstants {
     enum ScrollView {
-        static let contentSizeHeightMultiplier: CGFloat = 1.49
-        static let contentOffsetTrigger: CGFloat = 200
+        static let contentSizeHeightMultiplier: CGFloat = 1.66
+        static let contentOffsetTrigger: CGFloat = UIScreen.main.bounds.height * 0.56
     }
 
     enum ContentView {
-        static let cornerRadius: CGFloat = 32
-        static let topOffset: CGFloat = UIScreen.main.bounds.height * 0.45
+        static let topOffset: CGFloat = UIScreen.main.bounds.height * 0.6
         static let height: CGFloat = UIScreen.main.bounds.height
     }
 
