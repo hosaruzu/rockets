@@ -13,6 +13,8 @@ final class TableView: UIView {
     private let rocketTableView = RTableView()
     private let footerView = TableFooterView()
 
+    // MARK: - Init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupDelegates()
@@ -24,6 +26,8 @@ final class TableView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Lifecycle
 
     override func layoutSubviews() {
         super.layoutSubviews()

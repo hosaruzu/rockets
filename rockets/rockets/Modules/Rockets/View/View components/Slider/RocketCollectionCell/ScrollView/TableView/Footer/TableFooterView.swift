@@ -10,18 +10,7 @@ import UIKit
 final class TableFooterView: UIView {
     // MARK: - Subviews
 
-    private let watchLaunchesButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = AppTheme.Color.secondary
-        button.layer.cornerRadius = 12
-
-        if let font = AppTheme.Font.button {
-            let attributes = [NSAttributedString.Key.font: font]
-            let title = NSAttributedString(string: "Watch launches", attributes: attributes)
-            button.setAttributedTitle(title, for: .normal)
-        }
-        return button
-    }()
+    private let watchLaunchesButton = RButton(title: "Watch launches")
 
     // MARK: - Init
 
@@ -46,8 +35,17 @@ private extension TableFooterView {
     func setupConstraints() {
         watchLaunchesButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(32)
-            make.height.equalTo(56)
+            make.horizontalEdges.equalToSuperview().inset(UIConstants.Button.horizontalInsets)
+            make.height.equalTo(UIConstants.Button.height)
         }
+    }
+}
+
+// MARK: - UI constants
+
+private enum UIConstants {
+    enum Button {
+        static let horizontalInsets: CGFloat = 32
+        static let height: CGFloat = 56
     }
 }

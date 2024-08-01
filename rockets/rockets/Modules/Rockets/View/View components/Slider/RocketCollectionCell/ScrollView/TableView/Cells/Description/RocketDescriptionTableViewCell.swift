@@ -14,7 +14,6 @@ enum InfoCellType {
 }
 
 final class RocketDescriptionTableViewCell: UITableViewCell {
-
     private var type: InfoCellType?
 
     // MARK: - Subviews
